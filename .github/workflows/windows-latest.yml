@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
-      - run: cmake --build .
+      - run: cmake --build . --config Release
       - run: "./Debug/hello_test.exe"
       - run: cpack
       
