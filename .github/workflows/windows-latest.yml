@@ -18,3 +18,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: hello_test--win64.zip
+          path: .
