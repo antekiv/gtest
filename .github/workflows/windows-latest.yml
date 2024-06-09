@@ -1,0 +1,17 @@
+name: 'C++ CI'
+
+on:
+  push:
+    branches:
+      - minor
+
+jobs:
+  ubuntu-latest:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: true
+      - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
+      - run: cmake --build .
+      - run: hello_test
