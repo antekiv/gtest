@@ -12,7 +12,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           submodules: true
-      - run: sudo apt-get
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
       - run: cmake --build .
       - run: ./hello_test
