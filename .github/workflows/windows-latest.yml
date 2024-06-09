@@ -17,4 +17,4 @@ jobs:
       - name: Download a single artifact
         uses: actions/download-artifact@v4
         with:
-          name: my-artifact
+          name: hello_test--win64.zip
