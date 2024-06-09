@@ -14,7 +14,7 @@ jobs:
       - run: cmake --build . --config Release
       - run: "./Release/hello_test.exe"
       - run: cpack
-      - name: Uploading artifacts:
+      - name: Uploading artifacts
         uses: actions/upload-artifact@v2
         with:
           name: hello_test.exe
