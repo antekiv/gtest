@@ -1,8 +1,7 @@
 cmake_minimum_required(VERSION 3.14)
 
-set(CPACK_DEBIAN_PACKAGE_MAINTAINER BM)
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
-set(PROJECT_VERSION 2.4.23)
+set(PROJECT_VERSION 2.4.${PATCH_VERSION})
 project(hello_test)
 
 # GoogleTest requires at least C++14
@@ -32,16 +31,13 @@ target_link_libraries(
 include(GoogleTest)
 gtest_discover_tests(hello_test)
 
-include(InstallRequiredSystemLibraries)
+install(TARGETS ${CMAKE_PROJECT_NAME} RUNTIME DESTINATION bin)
+
+set(CPACK_GENERATOR "ZIP")
 
 set(CPACK_PACKAGE_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
 set(CPACK_PACKAGE_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
 set(CPACK_PACKAGE_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
-
-#set(CPACK_GENERATOR "TGZ")
-#set(CPACK_SOURCE_GENERATOR "TGZ")
-
-set(CPACK_DEBIAN_PACKAGE_MAINTAINER “GG”)
-set(CPACK_PACKAGE_CONTACT “GG”)
+set(CPACK_PACKAGE_CONTACT antekiv@github.com)
 
 include(CPack)
