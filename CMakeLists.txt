@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.14)
 
+set(CPACK_DEBIAN_PACKAGE_MAINTAINER BM)
 set(PATCH_VERSION "1" CACHE INTERNAL "Patch version")
 set(PROJECT_VERSION 2.4.23)
 project(hello_test)
