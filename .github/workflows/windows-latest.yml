@@ -14,4 +14,4 @@ jobs:
           submodules: true
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
       - run: cmake --build .
-      - run: hello_test
+      - run: ".\Debug\hello_test.exe"
