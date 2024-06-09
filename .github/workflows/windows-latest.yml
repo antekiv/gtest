@@ -15,6 +15,6 @@ jobs:
       - run: "./Release/hello_test.exe"
       - run: cpack
       - name: Download a single artifact
-        uses: actions/download-artifact@v4
+        uses: actions/upload-artifact@v2
         with:
           name: hello_test--win64.zip
