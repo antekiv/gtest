@@ -6,12 +6,10 @@ on:
       - minor
 
 jobs:
-  ubuntu-latest:
+  windows-latest:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          submodules: true
       - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
       - run: cmake --build .
       - run: "./Debug/hello_test.exe"
