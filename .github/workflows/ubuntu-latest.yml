@@ -26,7 +26,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ env.NUMBER_OF_COMMITS }}
-          release_name: Release ${{ env.NUMBER_OF_COMMITS }}
+          release_name: Ubuntu Release ${{ env.NUMBER_OF_COMMITS }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
