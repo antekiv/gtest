@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: sudo apt-get update && sudo apt-get install libboost-test-dev -y
-      - run: cmake . -DPATCH_VERSION=${{ github.run_number }}
+      - run: cmake . -DPATCH_VERSION=${{ env.NUMBER_OF_COMMITS }}
       - run: cmake --build . --config Release
       - run: ./hello_test
       - run: cmake --build . --target package
@@ -21,8 +21,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.run_number }}
-          release_name: Release ${{ github.run_number }}
+          tag_name: ${{ env.NUMBER_OF_COMMITS }}
+          release_name: Release ${{ env.NUMBER_OF_COMMITS }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
