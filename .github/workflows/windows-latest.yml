@@ -24,7 +24,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.NUMBER_OF_COMMITS }}
+          tag_name: Win ${{ env.NUMBER_OF_COMMITS }}
           release_name: Windows Release ${{ env.NUMBER_OF_COMMITS }}
           draft: false
           prerelease: false
